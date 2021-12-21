@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Cadastrar Motos</title>
+</head>
+
+<body>
+	<header>
+		<nav>
+		    <div class="nav-wrapper">
+		      <a href="#" class="brand-logo">Cadastro de Motos</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		      	<li><a href="/" class="waves-effect waves-light btn"><i class="material-icons left">home</i>Início</a></li>
+		        <li><a href="/motos" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Lista de Motos</a></li>
+		      </ul>
+		    </div>
+		</nav>	
+	</header>
+	
+	<form class="container" method="post">
+			<div class="row">
+			<div class="input-field col s4">
+			Modelo: <input type="text" value="" name="modelo" />			
+			</div>
+			<div class="input-field col s3">
+			Marca: <input type="text" value="" name="marca" />
+			</div>
+			<div class="input-field col s2">	
+			Cilindradas: <input type="text" value="" name="cilindradas" />
+			</div>
+			<div class="input-field col s2">	
+			Renavan: <input type="text" value="" name="renavam" />			
+			</div>
+			<div class="input-field col s1">
+			Potência: <input type="text" value="" name="potencia" />
+			</div>
+			<div class="input-field col s2">
+			Ano de Fabricação: <input type="text" value="" name="anofab" />
+			</div>
+			<div class="input-field col s2">
+			Ano do Modelo: <input type="text" value="" name="anomod" />
+			</div>
+			<div class="input-field col s2">
+			Cor: <input type="text" value="" name="cor" />
+			</div>
+			<div class="input-field col s2">
+			Localização: <input type="text" value="" name="localizacao" />
+			</div>
+			<div class="input-field col s2">
+			Nível de Combustível: <input type="text" value="" name="porcentnivelcomb" />
+			</div>
+			<div class="input-field col s2">
+			Data de Aquisição: <input type="date" value="" name="dataaquisicao" />
+			</div>
+			<div class="input-field col s3.5">
+			Combustíveis: <p>
+				<label><input type="checkbox" name="combgasolina"/><span>Gasolina</span></label>
+				<label><input type="checkbox" name="combetanol"/><span>Etanol</span></label>
+			</p>
+			</div>
+			<div class="input-field col s3.5">
+			Segurança<p>
+				<label><input type="checkbox" name="abs"/><span>Freios ABS</span></label>
+				<label><input type="checkbox" name="cbs"/><span>Freios CBS</span></label>
+				<label><input type="checkbox" name="alarme"/><span>Alarme</span></label>
+			</p>
+			</div>
+			<div class="input-field col s3.5">
+			
+			Acessórios<p>
+				<label><input type="checkbox" name="gps"/><span>GPS</span></label>
+			</p>
+			</div>
+			</div>
+		<button class="waves-effect waves-light btn" type="submit">Salvar</button>
+		<a href="/motos" class="waves-effect waves-light btn"><i class="material-icons left">cancel</i>Cancelar</a>
+	</form>
+	
+<!--JavaScript at end of body for optimized loading-->
+<!-- <script type="text/javascript" src="js/materialize.min.js"></script>  -->
+<script type="text/javascript" src="js/materialize.js"></script>
+</body>
+</html>

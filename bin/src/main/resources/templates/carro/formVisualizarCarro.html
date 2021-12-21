@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Cadastrar Carro</title>
+</head>
+
+<body>
+	<header>
+		<nav>
+		    <div class="nav-wrapper">
+		      <a href="#" class="brand-logo">Cadastro de Carro</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		      	<li><a href="/" class="waves-effect waves-light btn"><i class="material-icons left">home</i>Início</a></li>
+		        <li><a href="/carros" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Lista de Carros</a></li>
+		      </ul>
+		    </div>
+		</nav>	
+	</header>
+	
+	<form class="container" method="post" action="cadastrarCarro">
+			<input type="hidden" th:value="${carro.codigo}" name="codigo"disabled/>
+			<div class="row">
+			<div class="input-field col s5">
+			Modelo: <input type="text" th:value="${carro.modelo}" name="modelo" disabled/>			
+			</div>
+			<div class="input-field col s3">
+			Marca: <input type="text" th:value="${carro.marca}" name="marca" disabled/>
+			</div>
+			<div class="input-field col s3">	
+			Renavan: <input type="text" th:value="${carro.renavam}" name="renavam" disabled/>			
+			</div>
+			<div class="input-field col s1">
+			Potência: <input type="text" th:value="${carro.potencia}" name="potencia" disabled/>
+			</div>
+			<div class="input-field col s2">
+			Ano de Fabricação: <input type="text" th:value="${carro.anofab}" name="anofab" disabled/>
+			</div>
+			<div class="input-field col s2">
+			Ano do Modelo: <input type="text" th:value="${carro.anomod}" name="anomod" disabled/>
+			</div>
+			<div class="input-field col s2">
+			Cor: <input type="text" th:value="${carro.cor}" name="cor" disabled/>
+			</div>
+			<div class="input-field col s2">
+			Localização: <input type="text" th:value="${carro.localizacao}" name="localizacao" disabled/>
+			</div>
+			<div class="input-field col s2">
+			Nível de Combustível: <input type="text" th:value="${carro.porcentnivelcomb}" name="porcentnivelcomb" disabled/>
+			</div>
+			<div class="input-field col s2">
+			Data de Aquisição: <input type="date" th:value="${carro.dataaquisicao}" name="dataaquisicao" disabled/>
+			</div>
+			<div class="input-field col s3.5">
+			Combustíveis: <p>
+				<label><input type="checkbox" th:checked="${carro.combgasolina}" name="combgasolina"disabled/><span>Gasolina</span></label>
+				<label><input type="checkbox" th:checked="${carro.combetanol}" name="combetanol"disabled/><span>Etanol</span></label>
+				<label><input type="checkbox" th:checked="${carro.combdiesel}" name="combdiesel"disabled/><span>Diesel</span></label>
+				<label><input type="checkbox" th:checked="${carro.combgnv}" name="combgnv"disabled/><span>GNV</span></label>
+			</p>
+			</div>
+			<div class="input-field col s3.5">
+			Segurança<p>
+				<label><input type="checkbox" th:checked="${carro.abs}" name="abs"disabled/><span>Freios ABS</span></label>
+				<label><input type="checkbox" th:checked="${carro.alarme}" name="alarme"disabled/><span>Alarme</span></label>
+				<label><input type="checkbox" th:checked="${carro.travas}" name="travas"disabled/><span>Travas</span></label>
+			</p>
+			</div>
+			<div class="input-field col s3.5">
+			
+			Acessórios<p>
+				<label><input type="checkbox" th:checked="${carro.arcondicionado}" name="arcondicionado"disabled/><span>Ar Condicionado</span></label>
+				<label><input type="checkbox" th:checked="${carro.vidroeletrico}" name="vidroeletrico"disabled/><span>Vidro Elétrico</span></label>
+				<label><input type="checkbox" th:checked="${carro.gps}" name="gps"disabled/><span>GPS</span></label>
+			</p>
+			</div>
+			</div>
+		<a href="/carros" class="waves-effect waves-light btn"><i class="material-icons left">arrow_back</i>Voltar</a>
+	</form>
+	
+<!--JavaScript at end of body for optimized loading-->
+<!-- <script type="text/javascript" src="js/materialize.min.js"></script>  -->
+<script type="text/javascript" src="js/materialize.js"></script>
+</body>
+</html>

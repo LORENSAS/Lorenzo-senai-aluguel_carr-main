@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Cadastrar Agencia</title>
+</head>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
+</script>
+
+<body>
+	<header>
+		<nav>
+		    <div class="nav-wrapper">
+		      <a href="#" class="brand-logo">Cadastro de Agencias</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		      	<li><a href="/" class="waves-effect waves-light btn"><i class="material-icons left">home</i>Início</a></li>
+		        <li><a href="/agencias" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Lista de Agencias</a></li>
+		      </ul>
+		    </div>
+		</nav>	
+	</header>
+
+	<form class="container" method="post" action="cadastrarAgencia">
+			<div class="row">
+			<div class="input-field col s6">
+			Nome Fantasia: <input type="text" value="" name="nomefantasia" />		
+			</div>
+			<div class="input-field col s3">
+			Telefone: <input type="text" value="" name="telefone" />		
+			</div>
+			<div class="input-field col s3">			
+			CNPJ: <input type="text" value="" name="cnpj" />		
+			</div>
+			<div class="input-field col s4">
+			Inscrição Estadual: <input type="text" value="" name="inscricaoestadual" />		
+			</div>
+			<div class="input-field col s8">
+			Gerente Responsável: <input type="text" value="" name="gerenteresponsavel" />					
+			</div>
+			<div class="input-field col s5">			
+			Rua: <input type="text" value="" name="endrua" />
+			</div>
+			<div class="input-field col s1">
+			Número: <input type="text" value="" name="endnumero" />
+			</div>
+			<div class="input-field col s4">
+			Complemento: <input type="text" value="" name="endcomplemento" />
+			</div>
+			<div class="input-field col s2">
+			Bairro: <input type="text" value="" name="endbairro" />
+			</div>
+			<div class="input-field col s4">
+			Cidade: <input type="text" value="" name="endCidade" />
+			</div>
+			<div class="input-field col s3"> 
+			Estado
+			<p>				    
+			  <select class="browser-default" name="endunidadefederativa">			
+			    <option value="AC">Acre</option>
+				<option value="AL">Alagoas</option>
+				<option value="AP">Amapá</option>
+				<option value="AM">Amazonas</option>
+				<option value="BA">Bahia</option>
+				<option value="CE">Ceará</option>
+				<option value="DF">Distrito Federal</option>
+				<option value="ES">Espírito Santo</option>
+				<option value="GO">Goiás</option>
+				<option value="MA">Maranhão</option>
+				<option value="MT">Mato Grosso</option>
+				<option value="MS">Mato Grosso do Sul</option>
+				<option value="MG">Minas Gerais</option>
+				<option value="PA">Pará</option>
+				<option value="PB">Paraíba</option>
+				<option value="PR">Paraná</option>
+				<option value="PE">Pernambuco</option>
+				<option value="PI">Piauí</option>
+				<option value="RJ">Rio de Janeiro</option>
+				<option value="RN">Rio Grande do Norte</option>
+				<option value="RS">Rio Grande do Sul</option>
+				<option value="RO">Rondônia</option>
+				<option value="RR">Roraima</option>
+				<option value="SC">Santa Catarina</option>
+				<option value="SP">São Paulo</option>
+				<option value="SE">Sergipe</option>
+				<option value="TO">Tocantins</option>
+			    
+			  </select>
+			<p/>				    				   
+			</div>		
+			<div class="input-field col s2">
+			CEP: <input type="text" value="" name="endcep" />
+			</div>					
+		</div>
+		<button class="waves-effect waves-light btn" type="submit"><i class="material-icons left">save</i>Salvar</button>
+		<a href="/agencias" class="waves-effect waves-light btn"><i class="material-icons left">cancel</i>Cancelar</a>											
+			
+	</form>
+	
+<!--JavaScript at end of body for optimized loading-->
+<!-- <script type="text/javascript" src="js/materialize.min.js"></script>  -->
+<script type="text/javascript" src="js/materialize.js"></script>
+</body>
+</html>

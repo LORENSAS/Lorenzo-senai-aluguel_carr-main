@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Locações</title>
+</head>
+
+<body>
+	<header>
+		<nav>
+		    <div class="nav-wrapper">
+		      <a href="#" class="brand-logo">Locações</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		      	<li><a href="/" class="waves-effect waves-light btn"><i class="material-icons left">home</i>Início</a></li>
+		        <li><a href="/cadastrarLocacao" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Locação</a></li>
+		      </ul>
+		    </div>
+		</nav>	
+	</header>
+	
+	<table class="container">
+		<thead>
+		<tr>
+			<th>Data</th>
+			
+			<th>Carro</th>
+			<th>Moto</th>
+			<th>Seguro</th>
+			<th>Agencia</th>		
+			<th>Visualizar</th>
+			<th>Editar</th>
+			<th>Deletar</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr th:each="locacao : ${locacoes}">	
+			<td><span th:text="${locacao.data}"></span></td>	
+			<td><span th:text="${locacao.carro}"></span></td>
+			<td><span th:text="${locacao.moto}"></span></td>
+			<td><span th:text="${locacao.seguro}"></span></td>
+			<td><span th:text="${locacao.agencia}"></span></td>
+			
+			
+			<td><a class="waves-effect waves-light btn-small" href="#" th:href="@{/visualizarLocacao(codigo=${locacao.codigo})}"><i class="material-icons left">view_agenda</i> </a> </td>
+			<td><a class="waves-effect waves-light btn-small" href="#" th:href="@{/editarLocacao(codigo=${locacao.codigo})}"><i class="material-icons left">edit</i> </a> </td>
+			<td><a class="waves-effect waves-light btn-small" href="#" th:href="@{/deletarLocacao(codigo=${locacao.codigo})}"><i class="material-icons left">delete</i></a></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	
+	
+<!--JavaScript at end of body for optimized loading-->
+<!-- <script type="text/javascript" src="js/materialize.min.js"></script>  -->
+<script type="text/javascript" src="js/materialize.js"></script>
+</body>
+</html>

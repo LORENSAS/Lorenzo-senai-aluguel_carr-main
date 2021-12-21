@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Cadastrar Cliente</title>
+</head>
+
+<body>
+	<header>
+		<nav>
+		    <div class="nav-wrapper">
+		      <a href="#" class="brand-logo">Cadastro de Clientes</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		      	<li><a href="/" class="waves-effect waves-light btn"><i class="material-icons left">home</i>Início</a></li>
+		        <li><a href="/clientes" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Lista de Clientes</a></li>
+		      </ul>
+		    </div>
+		</nav>	
+	</header>
+
+	<form class="container" method="post" action="cadastrarCliente">
+				<input type="hidden" th:value="${cliente.codigo}" name="codigo"disabled/>
+				<div class="row">
+				<div class="input-field col s4">
+				Nome:<input type="text" th:value="${cliente.nome}" name="nome" disabled/>
+				</div>				
+				<div class="input-field col s2">				
+				RG: <input type="text" th:value="${cliente.rg}" name="rg" disabled/>	
+				</div>				
+				<div class="input-field col s3">				
+				Número do Documento: <input type="text" th:value="${cliente.numerodocumento}" name="numerodocumento" disabled/>	
+				</div>
+				<div class="input-field col s3">
+				Tipo de Documento
+				<p>
+					<label><input class="with-gap" th:checked='${cliente.tipodocumento.equals("CPF")}' value= "CPF" name="tipoDocumento" type="radio" disabled /><span>CPF</span></label>
+				   	<label><input class="with-gap" th:checked='${cliente.tipodocumento.equals("CNPJ")}' value = "CNPJ" name="tipoDocumento" type="radio" disabled/><span>CNPJ</span></label>
+			  	</p>			  	
+				</div>	
+				<div class="input-field col s2">	
+				Telefone: <input type="text" th:value="${cliente.telefone}" name="telefone" disabled/>
+				</div>				
+				<div class="input-field col s3">
+				Email: <input type="text" th:value="${cliente.email}" name="email" disabled/>
+				</div>				
+				<div class="input-field col s2">				
+				Data de Nascimento: <input type="date" th:value="${cliente.datanascimento}" name="datanascimento" disabled/>													
+				</div>				
+				<div class="input-field col s3">				
+				Naturalidade: <input type="text" th:value="${cliente.naturalidade}" name="naturalidade" disabled/>
+				</div>				
+				<div class="input-field col s4">			
+				Rua: <input type="text" th:value="${cliente.endrua}" name="endrua" disabled/>
+				</div>				
+				<div class="input-field col s1">
+				Número: <input type="text" th:value="${cliente.endnumero}" name="endnumero" disabled/>
+				</div>				
+				<div class="input-field col s2">
+				Complemento: <input type="text" th:value="${cliente.endcomplemento}" name="endcomplemento" disabled/>
+				</div>				
+				<div class="input-field col s3">
+				Bairro: <input type="text" th:value="${cliente.endbairro}" name="endbairro" disabled/>
+				</div>				
+				<div class="input-field col s4">
+				Cidade: <input type="text" th:value="${cliente.endcidade}" name="endcidade" disabled/>
+				</div>				
+				<div class="input-field col s3"> 
+				Estado
+				<p>				    
+				  <select class="browser-default" name="endunidadefederativa"disabled>				    
+				    <option th:selected='${cliente.endunidadefederativa.equals("AC")}'value="AC">Acre</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("AL")}'value="AL">Alagoas</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("AP")}'value="AP">Amapá</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("AM")}'value="AM">Amazonas</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("BA")}'value="BA">Bahia</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("CE")}'value="CE">Ceará</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("DF")}'value="DF">Distrito Federal</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("ES")}'value="ES">Espírito Santo</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("GO")}'value="GO">Goiás</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("MA")}'value="MA">Maranhão</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("MT")}'value="MT">Mato Grosso</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("MS")}'value="MS">Mato Grosso do Sul</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("MG")}'value="MG">Minas Gerais</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("PA")}'value="PA">Pará</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("PB")}'value="PB">Paraíba</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("PR")}'value="PR">Paraná</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("PE")}'value="PE">Pernambuco</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("PI")}'value="PI">Piauí</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("RJ")}'value="RJ">Rio de Janeiro</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("RN")}'value="RN">Rio Grande do Norte</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("RS")}'value="RS">Rio Grande do Sul</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("RO")}'value="RO">Rondônia</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("RR")}'value="RR">Roraima</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("SC")}'value="SC">Santa Catarina</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("SP")}'value="SP">São Paulo</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("SE")}'value="SE">Sergipe</option>
+					<option th:selected='${cliente.endunidadefederativa.equals("TO")}'value="TO">Tocantins</option>				    
+				  </select>
+				<p/>				    				   
+				</div>			
+				<div class="input-field col s2">
+				CEP: <input type="text" th:value="${cliente.endcep}" name="endcep" disabled/>
+				</div>											
+				</div>	
+			<a href="/clientes" class="waves-effect waves-light btn"><i class="material-icons left">arrow_back</i>Voltar</a>
+	</form>
+				
+<!--JavaScript at end of body for optimized loading-->
+<!-- <script type="text/javascript" src="js/materialize.min.js"></script>  -->
+<script type="text/javascript" src="js/materialize.js"></script>
+</body>
+</html>

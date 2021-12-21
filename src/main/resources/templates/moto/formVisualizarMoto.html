@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Cadastrar Moto</title>
+</head>
+
+<body>
+	<header>
+		<nav>
+		    <div class="nav-wrapper">
+		      <a href="#" class="brand-logo">Cadastro de Moto</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		      	<li><a href="/" class="waves-effect waves-light btn"><i class="material-icons left">home</i>Início</a></li>
+		        <li><a href="/motos" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Lista de Motos</a></li>
+		      </ul>
+		    </div>
+		</nav>	
+	</header>
+	
+	<form class="container" method="post" action="cadastrarMoto">
+			<input type="hidden" th:value="${moto.codigo}" name="codigo"disabled/>
+			<div class="row">
+			<div class="input-field col s4">
+			Modelo: <input type="text" th:value="${moto.modelo}" name="modelo" disabled/>			
+			</div>
+			<div class="input-field col s3">
+			Marca: <input type="text" th:value="${moto.marca}" name="marca" disabled/>
+			</div>
+			<div class="input-field col s2">	
+			Cilindradas: <input type="text" th:value="${moto.cilindradas}" name="cilindradas" disabled/>
+			</div>
+			<div class="input-field col s2">	
+			Renavan: <input type="text" th:value="${moto.renavam}" name="renavam" disabled/>			
+			</div>
+			<div class="input-field col s1">
+			Potência: <input type="text" th:value="${moto.potencia}" name="potencia" disabled/>
+			</div>
+			<div class="input-field col s2">
+			Ano de Fabricação: <input type="text" th:value="${moto.anofab}" name="anofab" disabled/>
+			</div>
+			<div class="input-field col s2">
+			Ano do Modelo: <input type="text" th:value="${moto.anomod}" name="anomod" disabled/>
+			</div>
+			<div class="input-field col s2">
+			Cor: <input type="text" th:value="${moto.cor}" name="cor" disabled />
+			</div>
+			<div class="input-field col s2">
+			Localização: <input type="text" th:value="${moto.localizacao}" name="localizacao" disabled/>
+			</div>
+			<div class="input-field col s2">
+			Nível de Combustível: <input type="text" th:value="${moto.porcentnivelcomb}" name="porcentnivelcomb" disabled/>
+			</div>
+			<div class="input-field col s2">
+			Data de Aquisição: <input type="date" th:value="${moto.dataaquisicao}" name="dataaquisicao" disabled/>
+			</div>
+			<div class="input-field col s3.5">
+			Combustíveis: <p>
+				<label><input type="checkbox" th:checked="${moto.combgasolina}" name="combgasolina"disabled/><span>Gasolina</span></label>
+				<label><input type="checkbox" th:checked="${moto.combetanol}" name="combetanol"disabled/><span>Etanol</span></label>
+			</p>
+			</div>
+			<div class="input-field col s3.5">
+			Segurança<p>
+				<label><input type="checkbox" th:checked="${moto.abs}" name="abs"disabled/><span>Freios ABS</span></label>
+				<label><input type="checkbox" th:checked="${moto.cbs}" name="cbs"disabled/><span>Freios CBS</span></label>
+				<label><input type="checkbox" th:checked="${moto.alarme}" name="alarme"disabled/><span>Alarme</span></label>
+			</p>
+			</div>
+			<div class="input-field col s3.5">
+			
+			Acessórios<p>
+				<label><input type="checkbox" th:checked="${moto.gps}" name="gps"disabled/><span>GPS</span></label>
+			</p>
+			</div>
+			</div>
+		<a href="/motos" class="waves-effect waves-light btn"><i class="material-icons left">arrow_back</i>Voltar</a>
+	</form>
+	
+<!--JavaScript at end of body for optimized loading-->
+<!-- <script type="text/javascript" src="js/materialize.min.js"></script>  -->
+<script type="text/javascript" src="js/materialize.js"></script>
+</body>
+</html>

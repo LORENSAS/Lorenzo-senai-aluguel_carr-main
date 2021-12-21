@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Agencias</title>
+</head>
+
+<body>
+	<header>
+		<nav>
+		    <div class="nav-wrapper">
+		      <a href="#" class="brand-logo">Agencias</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		      	<li><a href="/" class="waves-effect waves-light btn"><i class="material-icons left">home</i>Início</a></li>
+		        <li><a href="/cadastrarAgencia" class="waves-effect waves-light btn"><i class="material-icons left">add_circle_outline</i>Cadastrar Agencia</a></li>
+		      </ul>
+		    </div>
+		</nav>	
+	</header>
+	
+	<table class="container">
+		<thead>
+		<tr>
+			<th>Nome Fantasia</th>
+			<th>CNPJ</th>		
+			<th>Cidade</th>
+			<th>UF</th>			
+			<th>Telefone</th>
+			<th>Gerente Responsável</th>
+			<th>Visualizar</th>
+			<th>Editar</th>
+			<th>Deletar</th>
+		</tr>
+		</thead>
+		<tbody>
+			<tr th:each="agencia : ${agencias}">	
+
+			<td><span th:text="${agencia.nomefantasia}"></span></td>
+			<td><span th:text="${agencia.cnpj}"></span></td>			
+			<td><span th:text="${agencia.endcidade}"></span></td>
+			<td><span th:text="${agencia.endunidadefederativa}"></span></td>
+			<td><span th:text="${agencia.telefone}"></span></td>
+			<td><span th:text="${agencia.gerenteresponsavel}"></span></td>
+			<td><a class="waves-effect waves-light btn-small" href="#" th:href="@{/visualizarAgencia(codigo=${agencia.codigo})}"><i class="material-icons left">view_agenda</i> </a> </td>
+			<td><a class="waves-effect waves-light btn-small" href="#" th:href="@{/editarAgencia(codigo=${agencia.codigo})}"><i class="material-icons left">edit</i> </a> </td>
+			<td><a class="waves-effect waves-light btn-small" href="#" th:href="@{/deletarAgencia(codigo=${agencia.codigo})}"><i class="material-icons left">delete</i></a></td>
+			</tr>
+		</tbody>
+	</table>
+	
+<!--JavaScript at end of body for optimized loading-->
+<!-- <script type="text/javascript" src="js/materialize.min.js"></script>  -->
+<script type="text/javascript" src="js/materialize.js"></script>
+</body>
+</html>

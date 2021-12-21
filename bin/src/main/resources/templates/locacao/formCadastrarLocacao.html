@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+	 
+<head>
+<!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<!--Import materialize.css-->
+<link type="text/css" rel="stylesheet" href="materialize/css/materialize.min.css"  media="screen,projection"/>
+<!--Let browser know website is optimized for mobile-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Cadastrar Locação</title>
+</head>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('select');
+    var instances = M.FormSelect.init(elems, options);
+  });
+</script>
+	  
+<body>
+	<header>
+		<nav>
+		    <div class="nav-wrapper">
+		      <a href="#" class="brand-logo">Cadastrar Locação</a>
+		      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		      	<li><a href="/" class="waves-effect waves-light btn"><i class="material-icons left">home</i>Início</a></li>
+		        <li><a href="/locacoes" class="waves-effect waves-light btn"><i class="material-icons left">format_list_bulleted</i>Lista de Locações</a></li>
+		      </ul>
+		    </div>
+		</nav>	
+	</header>
+	
+		
+	<form class="container" method="post" action="cadastrarLocacao">
+		<div class="row">
+		<div class="input-field col s2">				
+		Data <input type="date" value="" name="data" />													
+		</div>	
+		<div class="input-field col s3"> 
+		Cliente
+		<p>				    
+		  <select class="browser-default" name="cliente">
+		  <option value="" disabled selected>Escolher Cliente</option>
+		  <tr th:each="cliente : ${clientes}">				  	
+		  <option th:text="${cliente.nome} + ' / ' + ${cliente.numerodocumento} + ' / COD: ' + ${cliente.codigo}" th:value="${cliente.codigo}">						    
+		  </select>
+		<p/>
+		</div>
+		
+		
+		
+		
+		
+		
+		<div class="input-field col s3"> 
+		Carro
+		<p>				    
+		  <select class="browser-default" name="carro">
+		  <option value="" disabled selected>Escolher Veículo</option>
+		  <tr th:each="carro : ${carros}">
+		  <option  th:text="${carro.marca} + ' / ' + ${carro.modelo} + ' / ' + ${carro.anomod} + ' / ' + ${carro.cor} + ' / COD: ' + ${carro.codigo}" th:value="${carro.codigo}"></option>
+		  </select>	
+		<p/>
+		</div>
+		
+		
+		
+		<div class="input-field col s3"> 
+		Moto
+		<p>				    
+		  <select class="browser-default" name="moto">
+		  <option value="" disabled selected>Escolher Moto</option>
+		  <tr th:each="moto : ${motos}">
+		  <option  th:text="${moto.marca} + ' / ' + ${moto.modelo} + ' / ' + ${moto.anomod} + ' / ' + ${moto.cor} + ' / COD: ' + ${moto.codigo}" th:value="${moto.codigo}"></option>
+		  </select>	
+		<p/>
+		</div>
+		
+		
+		
+		
+			
+		<div class="input-field col s3"> 
+		Seguro
+		<p>				    
+		  <select class="browser-default" name="seguro">	
+		  	<option value="" disabled selected>Escolher Seguro</option>	  				
+		    <option value="semseguro">Sem Seguro</option>
+		    <option value="coberturaparcial">Cobertura Parcial</option>
+		    <option value="coberturatotal">Cobertura Total</option>						    		    
+		  </select>
+		<p/>
+		</div>
+		
+		<div class="input-field col s3"> 
+		Agencia
+		<p>				    
+		  <select class="browser-default" name="agencia">
+		  <option value="" disabled selected>Escolher Agencia</option>
+		  <tr th:each="agencia:${agencias}">				  	
+		  <option th:text="${agencia.nomefantasia} + ' / ' + ${agencia.cnpj} + ' / COD: ' + ${agencia.codigo}" th:value="${agencia.codigo}">						    
+		  </select>
+		<p/>
+		</div>
+		  	
+        
+		  
+		<p/>
+		</div>
+		
+		
+			
+		</div>
+		
+	    
+	  	
+	  	<a href="/locacoes" class="waves-effect waves-light btn"><i class="material-icons left">attach_money</i>Calcular Reserva</a>
+		<button class="waves-effect waves-light btn" type="submit"><i class="material-icons left">save</i>Cadastrar</button>
+		<a href="/locacoes" class="waves-effect waves-light btn"><i class="material-icons left">cancel</i>Cancelar</a>		
+	</form>
+	
+<!--JavaScript at end of body for optimized loading-->
+<!-- <script type="text/javascript" src="js/materialize.min.js"></script>  -->
+<script type="text/javascript" src="js/materialize.js"></script>	
+</body>
+</html>
